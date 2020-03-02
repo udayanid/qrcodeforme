@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design for Bootstrap</title>
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <!-- MDB icon -->
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .custom-file-control,
+        .is-focused .form-control {
+            background-image: linear-gradient(0deg, #1E0058 2px, rgba(0, 150, 136, 0) 0), linear-gradient(0deg, rgba(0, 0, 0, .26) 1px, transparent 0);
+        }
+
+
+        .custom-file-control,
+        .form-control,
+        .is-focused .custom-file-control,
+        .is-focused .form-control {
+            background-image: linear-gradient(0deg, #9111cc 2px, rgba(0, 150, 136, 0) 0), linear-gradient(0deg, rgba(0, 0, 0, .26) 1px, transparent 0);
+        }
+
+        /* .bmd-form-group .bmd-label-static,
+        .bmd-form-group.is-filled .bmd-label-floating,
+        .bmd-form-group .is-filled .bmd-label-floating,
+        .bmd-form-group.is-focused .bmd-label-floating,
+        .bmd-form-group .is-focused .bmd-label-floating {
+           
+            color:#1E0058;
+        } */
+        font-sm-size {
+            font-size: 12px !important;
+        }
+
+        .is-focused {
+            color: #1E0058;
+        }
+
+        form input {
+            outline: none !important;
+            border: none !important;
+        }
+
+        footer {
+            margin-top: 0px !important;
+            text-align: center !important;
+        }
+
+        header {
+            margin-bottom: 83px !important;
+        }
+
+        .nav-link {
+            color: #1E0058 !important;
+            font-weight: bold !important;
+        }
+
+        body {
+            background-color: white !important;
+            /* color: white; */
+        }
+
+        .rounded-corner-violet {
+            border-top-right-radius: 25px !important;
+            border-top-left-radius: 25px !important;
+            color: white !important;
+            background: #1E0058 !important;
+            /* margin-bottom: 25px !important; */
+        }
+
+        .rounded-corner-pink {
+            /* border-top-right-radius: 25px !important;
+            border-top-left-radius: 25px !important; */
+            color: white !important;
+            background: #FF0094 !important;
+            /* margin-bottom: 25px !important; */
+        }
+
+        .rounded-corner-white {
+            /* border-radius: 25px !important; */
+            color: 1E0058 !important;
+            background: #EEEEEE !important;
+        }
+
+        #contact_section {
+            /* padding-top: 25px !important;
+            padding-bottom: 20px !important; 
+            margin-top: 30px;*/
+        }
+
+        #faq_section {
+            /* padding-top: 25px !important;
+            padding-bottom: 20px !important; */
+            margin-top: -15px !important;
+        }
+
+        #setting_section {
+            /* padding-top: 25px !important;
+            padding-bottom: 20px !important;*/
+            margin-top: -15px !important;
+        }
+
+        #signup_section,
+        image_upload_section {
+            /* padding-top: 25px !important;
+            padding-bottom: 20px !important; */
+            margin-top: -15px !important;
+        }
+
+
+        #section42 {
+            /* padding-top: 25px !important;
+            padding-bottom: 20px !important; 
+            height: 300px;
+            color: #fff;
+            background-color: #FF0094;*/
+            margin-bottom: -17px;
+        }
+
+        .btn-file {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+        }
+
+        #img-upload {
+            width: 100%;
+        }
+
+        .back-to-top {
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+        }
+
+        .error-msg {
+            color: red !important;
+        }
+
+        .checkbox-lg .custom-control-label::before,
+        .checkbox-lg .custom-control-label::after {
+            top: 2.8rem;
+            width: 1.85rem;
+            height: 1.85rem;
+            left: 1rem;
+        }
+
+        .checkbox-lg .custom-control-label {
+            padding-top: 51px;
+            padding-left: 44px;
+        }
+
+
+        .checkbox-xl .custom-control-label::before,
+        .checkbox-xl .custom-control-label::after {
+            top: 2.8rem;
+            width: 1.85rem;
+            height: 1.85rem;
+            left: 1rem;
+        }
+
+        .checkbox-xl .custom-control-label {
+            padding-top: 47px;
+            padding-left: 44px;
+        }
+
+        .custom-control-label::after {
+            background-color: #FF0094 !important;
+        }
+
+        .step-pog-bar {
+            margin-top: 10px;
+            ;
+            counter-reset: step
+        }
+
+        .step-pog-bar li {
+            list-style: none;
+            float: left;
+            width: 75px;
+            position: relative;
+            text-align: center;
+        }
+
+        .step-pog-bar li:before {
+            content: '';
+            counter-increment: step;
+            width: 70px;
+            height: 10px;
+            line-height: 30px;
+            border: 2px solid #1E0058;
+            display: block;
+            text-align: center;
+            margin: 0 auto 0px auto;
+            /* border-radius: 50%; 
+            color: white !important;*/
+            background-color: #EEEEEE;
+        }
+
+        .step-pog-bar li::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: -55px;
+            width: 100%;
+            border: 2px solid #1E0058;
+            text-align: center;
+            z-index: -1;
+        }
+
+        /* .step-pog-bar li:nth-child(2):before {
+            background-color: #FF0094;
+        } */
+
+        .step-pog-bar li:first-child:after {
+            content: none;
+        }
+
+        /* $( "ul li:nth-child(2)" ).append( "<span> - 2nd!</span>" ); */
+
+
+        .step-pog-bar li.active {
+            color: #FF0094;
+        }
+
+        .step-pog-bar li.active::before {
+            /* border-color: #FF0094; */
+        }
+
+        .step-pog-bar li.active+li:after {
+            border-color: red;
+            background-color: white;
+        }
+
+        .custom-file-control,
+        .form-control,
+        .is-focused .custom-file-control,
+        .is-focused .form-control {
+            background-color: none;
+            color: #1E0058;
+        }
+
+        /* .col-lg-4 div.step1-det {
+            margin-top:50px !important;
+
+        } 
+        .col-md-4 div.step1-det {
+            margin-top:100px !important;
+        }
+        .col-sm-12 div.step1-det {
+            margin-top:30px !important;
+        }
+        .col-xs-12 div.step1-det {
+            margin-top:30px !important;
+        }  
+        input[type=text]:focus:not([readonly])+label {
+            color: #CC0000;
+        }*/
+
+        /* input[type=text]:focus:not([readonly]) {
+            box-shadow: 0 1px 0 0 #CC0000;
+            border-bottom: 1px solid #CC0000;
+        } */
+        .switch label .bmd-switch-track {
+            background-image: linear-gradient(90deg, rgba(0, 0, 0, .26) 0, rgba(0, 0, 0, .26) 50%, #1E0058 0, #1E0058);
+        }
+
+        .switch label input:checked+.bmd-switch-track:after {
+            background-color: #FF0094 !important;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50" style="height:400px;">
+    <!-- Start your project here-->
+    <!--start navbar-->
+    <!-- <div class="fixed-action-btn smooth-scroll" style="bottom: 45px; right: 24px;">
+        <a href="#top-section" class="btn-floating btn-large red waves-effect waves-light">
+            <i class="fa fa-arrow-up">^</i>
+        </a>
+    </div> -->
+    <header>
+        <nav id="qr_code_scroll" class="navbar fixed-top navbar-expand-lg navbar-light #FF0094"
+            style="background-color:white !important">
+            <a class="navbar-brand" href="#"><img src="img/logo.png" width="130" height="40"
+                    class="d-inline-block align-top" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#contact_section">Contact <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq_section">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#setting_section">Setting</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>-->
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <!--input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"-->
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                        style="border-radius:25px !important;background-color:#FF0094 !important;color:white !important;border-color:#FF0094 !important">Sign
+                        Up</button>
+                </form>
+            </div>
+        </nav>
+
+    </header>
+    <!--main navigation-->
+    <!--main layout-->
+    <main>
+        <div id="signup_section" class="container-fluid rounded-corner-violet">
+            <div class="row" style="margin-top:-15px !important">
+                <div class="col-md-2"></div>
+                <div class="col-md-4" style="padding-top:5% !important;padding-bottom:5% !important">
+                    <div id="step1-det" class="step3-det"
+                        style="padding-top:15% !important;padding-bottom:5% !important">
+                        <h2>Basic Details</h2>
+                        <p>Let's start with the basics. we'll fill out your <br>profile with content over the next two
+                            stages.</p>
+                    </div>
+                    <div id="step2-det" class="step3-det">
+                        <span id='image-back' style="color: #FF0094 !important;"><i
+                                class="fas fa-long-arrow-alt-left mr-3"></i>BACK</span>
+                        <h2>Image</h2>
+                        <p>Upload or taake a phot to use as your profile <br>picture.You can also use a company logo.
+                        </p>
+                    </div>
+                    <div id="step3-det" class="step3-det">
+                        <span id='legal-back' style="color: #FF0094 !important;"><i
+                                class="fas fa-long-arrow-alt-left mr-3"></i>BACK</span>
+                        <h2>Legals</h2>
+                        <p>Please take the time to read through <br>our terms and conditions</p>
+                    </div>
+                </div>
+                <!-- <div class="col-md-3"
+                    style="background-color:#EEEEEE !important;color:#1E0058 !important;border-radius: 15px !important;margin-top:20px !important;margin-bottom: 30px !important;margin-right: 10px !important;margin-left: 10px !important ;"> -->
+                <div class="col-md-4">
+                    <div class="row col-md-12 justify-content-center" style="margin-top:50px !important">
+                        <ul class="step-pog-bar">
+                            <li class="active">step1
+                            </li>
+                            <li class="active">step2
+                            </li>
+                            <li class="active">step3
+                            </li>
+                        </ul>
+                    </div>
+                    <form id="profile_registration" class="rowjustify-content-center"
+                        style="padding:10px;background-color:#EEEEEE !important;color:#1E0058 !important;border-radius:25px !important;margin-bottom:40px !important">
+                        <fieldset id="step1">
+                            <div class="form-group">
+                                <label for="firstname" class="bmd-label-floating">First Name</label>
+                                <input type="text" class="form-control" id="firstname">
+                                <span class="help error-msg" id="firstname_error_message">Should contain only
+                                    Characters</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastname" class="bmd-label-floating">Last Name</label>
+                                <input type="text" class="form-control" id="lastname">
+                                <span class="error-msg" id="lastname_error_message">Should contain only
+                                    Characters</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="bmd-label-floating">Email address</label>
+                                <input type="email" class="form-control" id="email">
+                                <span class="error-msg" id="email_error_message">Invalid email</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="bmd-label-floating">Password</label>
+                                <input type="password" class="form-control" id="password">
+                                <span class="error-msg" id="password_error_message">Should be 8 Characters</span>
+                                <!-- <span class="bmd-help" id="password_error_message">Should be 8 Characters</span> -->
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmpassword" class="bmd-label-floating">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmpassword">
+                                <span class="error-msg" id="confirmpassword_error_message">Password must be
+                                    matched</span>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <button type="button" class="btn btn-primary btn-raised profile_form_submit"
+                                    style="width:inherit !important ;border-radius: 15px !important;background-color: #FF0094 !important;text-align: center !important;">Next<i
+                                        class="fas fa-arrow-right ml-2"></i> </i></button>
+                            </div>
+                        </fieldset>
+                        <fieldset id="step2">
+                            <div class="form-group">
+                                <img class="rounded-circle z-depth-2" alt="100x100"
+                                    src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg"
+                                    data-holder-rendered="true" id='img-upload' />
+
+                                <label>Upload Image</label>
+                                <div class="input-group" style="margin-top:20px !important">
+                                    <span class="input-group-btn mr-3">
+                                        <span class="btn btn-default btn-file ml-5"
+                                            style="text-align: center !important;background-color: #FF0094 !important;border-radius:15px !important;color:#EEEEEE !important">
+                                            Select Photo <input type="file" id="imgInp">
+                                        </span>
+                                    </span>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <button type="button" class="btn btn-primary btn-raised img_upload_submit"
+                                    style="width:inherit !important ;border-radius: 15px !important;background-color: #FF0094 !important;text-align: center !important;">Next<i
+                                        class="fas fa-arrow-right ml-2"></i> </i></button>
+                            </div>
+                        </fieldset>
+                        <fieldset id="step3">
+                            <!-- Default checked -->
+                            <div class="custom-control custom-checkbox checkbox-lg">
+                                <input type="checkbox" class="custom-control-input" id="checkbox-2" checked="">
+                                <label class="custom-control-label" for="checkbox-2" data-toggle="modal"
+                                    data-target="#policy_modal_cart">Terms Of Use</label>
+                                <!-- Modal: modalCart -->
+                                <div class="modal fade" id="policy_modal_cart" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content" style="border-radius:15px !important">
+                                            <!--Header-->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title" id="myModalLabel">Legal</h4>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">×</span>
+                                                </button>
+                                            </div>
+                                            <!--Body-->
+                                            <div class="modal-body">
+
+                                                <!-- <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Product name</th>
+                                                            <th>Price</th>
+                                                            <th>Remove</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>Product 1</td>
+                                                            <td>100$</td>
+                                                            <td><a><i class="fas fa-times"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>Product 2</td>
+                                                            <td>100$</td>
+                                                            <td><a><i class="fas fa-times"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>Product 3</td>
+                                                            <td>100$</td>
+                                                            <td><a><i class="fas fa-times"></i></a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">4</th>
+                                                            <td>Product 4</td>
+                                                            <td>100$</td>
+                                                            <td><a><i class="fas fa-times"></i></a></td>
+                                                        </tr>
+                                                        <tr class="total">
+                                                            <th scope="row">5</th>
+                                                            <td>Total</td>
+                                                            <td>400$</td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> -->
+
+                                            </div>
+                                            <!--Footer-->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline-primary"
+                                                    data-dismiss="modal">Close</button>
+                                                <!-- <button class="btn btn-primary">Checkout</button> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal: modalCart -->
+                            </div>
+
+                            <!-- Default checked -->
+                            <div class="custom-control custom-checkbox checkbox-xl">
+                                <input type="checkbox" class="custom-control-input" id="checkbox-3" checked="">
+                                <label class="custom-control-label" for="checkbox-3">Privacy Policy</label>
+                            </div>
+
+
+                            <div class="form-group col-md-12">
+                                <button type="button" class="btn btn-primary btn-raised legal_form_submit"
+                                    style="width:inherit !important ;border-radius: 15px !important;background-color: #FF0094 !important;text-align: center !important;margin-top:58px !important;">Next<i
+                                        class="fas fa-arrow-right ml-2"></i></button>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="image_upload_section" class="container-fluid rounded-corner-violet">
+            <div class="row" style="margin-top:-15px !important">
+                <div class="col-md-2"></div>
+                <div class="col-md-4" style="padding-top:5% !important;padding-bottom:5% !important">
+                    <div id="step2">
+                        <span id='image-back' style="color: #FF0094 !important;"><i
+                                class="fas fa-long-arrow-alt-left mr-3"></i>BACK</span>
+                        <h2>Image</h2>
+                        <p>Upload or taake a phot to use as your profile <br>picture.You can also use a company logo.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3"
+                    style="background-color:#EEEEEE !important;color:#1E0058 !important;border-radius: 15px !important;margin-top:20px !important;margin-bottom: 30px !important;margin-right: 10px !important;margin-left: 10px !important ;">
+                    <form>
+                        <div class="form-group">
+                            <img class="rounded-circle z-depth-2" alt="100x100"
+                                src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg"
+                                data-holder-rendered="true" id='img-upload' />
+
+                            <label>Upload Image</label>
+                            <div class="input-group" style="margin-top:20px !important">
+                                <span class="input-group-btn mr-3">
+                                    <span class="btn btn-default btn-file ml-5"
+                                        style="text-align: center !important;background-color: #FF0094 !important;border-radius:15px !important;color:#EEEEEE !important">
+                                        Select Photo <input type="file" id="imgInp">
+                                    </span>
+                                </span>
+                                <input type="text" class="form-control" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <button type="button" class="btn btn-primary btn-raised img_upload_submit"
+                                style="width:inherit !important ;border-radius: 15px !important;background-color: #FF0094 !important;text-align: center !important;">Next<i
+                                    class="fas fa-arrow-right ml-2"></i> </i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="legal_section" class="container-fluid rounded-corner-violet">
+            <div class="row" style="margin-top:-15px !important">
+                <div class="col-md-2"></div>
+                <div class="col-md-4" style="padding-top:5% !important;padding-bottom:5% !important">
+                    <span id='legal-back' style="color: #FF0094 !important;"><i
+                            class="fas fa-long-arrow-alt-left mr-3"></i>BACK</span>
+                    <h2>Legals</h2>
+                    <p>Please take the time to read through <br>our terms and conditions</p>
+                </div>
+                <div class="col-md-3"
+                    style="background-color:#EEEEEE !important;color:#1E0058 !important;border-radius: 15px !important;margin-top:20px !important;margin-bottom: 30px !important;margin-right: 10px !important;margin-left: 10px !important ;">
+                    <form>
+                        <!-- Default checked -->
+                        <div class="custom-control custom-checkbox checkbox-lg">
+                            <input type="checkbox" class="custom-control-input" id="checkbox-2" checked="">
+                            <label class="custom-control-label" for="checkbox-2">Terms Of Use</label>
+                        </div>
+
+                        <!-- Default checked -->
+                        <div class="custom-control custom-checkbox checkbox-xl">
+                            <input type="checkbox" class="custom-control-input" id="checkbox-3" checked="">
+                            <label class="custom-control-label" for="checkbox-3">Privacy Policy</label>
+                        </div>
+
+
+                        <div class="form-group col-md-12">
+                            <button type="button" class="btn btn-primary btn-raised legal_form_submit"
+                                style="width:inherit !important ;border-radius: 15px !important;background-color: #FF0094 !important;text-align: center !important;margin-top:58px !important;">Next<i
+                                    class="fas fa-arrow-right ml-2"></i> </i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="faq_section" class="container-fluid rounded-corner-white">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4"
+                    style="padding-top:5% !important;padding-bottom:5% !important;color:#1E0058 !important;font-weight: bolder !important;">
+                    <h2>FAQ</h2>
+                    <p>Have a different question about our platform? Send us a<br>question instead and we'll get back to
+                        you.</p>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+        <div id="setting_section" class="container-fluid">
+            <div class="row rounded-corner-violet">
+
+                <div class="col-md-12 text-center" style="padding-top:5% !important;padding-bottom:5% !important">
+                    <h2>Setting</h2>
+                    <p>Adjust your privacy, communication</p>
+                    <p>and account setting below</p>
+                </div>
+
+            </div>
+            <div class="container-fluid row col-md-12 rounded-corner-white" style="color:#1E0058 !important">
+                <div class="row col-md-12">
+                    <div class="col-md2 offset-md-3 mr-3"
+                        style="padding-top:5% !important;padding-bottom:5% !important">
+                        <h2>Privacy</h2>
+                    </div>
+                    <div class="col-md-4 text-md-left ml-3"
+                        style="padding-top:5% !important;padding-bottom:5% !important;color:#1E0058 !important;font-weight: bolder !important;">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5 style="font-size:15px !important;"><b>Hide my profile</b></h5>
+                                </div>
+                                <div class="offset-md-4 col-md-4">
+                                    <div class="switch">
+                                        <label>
+                                            Off
+                                            <input type="checkbox">
+                                            <span class="lever"></span> On
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="font-size:12px !important">Activating this setting will temporarily hide your
+                                profile.
+                                people trying to view your <br>profile URL or QR code will not be able to see it. It can
+                                be
+                                updated at any time. </p>
+
+                            <h5 style="font-size:15px !important;"><b>Profile Categories</b></h5>
+                            <p style="font-size:12px !important">Uncheck any categories you want to hide from your
+                                profile.
+                                Tis can be useful when you only want to<br> share Personal or Business details with
+                                somebody.</p>
+                            <div class="row">
+                                <div class="custom-control custom-checkbox ml-3 mr-1">
+                                    <input type="checkbox" name='check' class="custom-control-input"
+                                        id="defaultChecked1" checked>
+                                    <label class="custom-control-label" for="defaultChecked1"
+                                        style="font-size:12px !important;">Personal </label>
+                                </div>
+                                <div class="custom-control custom-checkbox mr-1">
+                                    <input type="checkbox" name='check' class="custom-control-input"
+                                        id="defaultChecked2" checked>
+                                    <label class="custom-control-label" for="defaultChecked2"
+                                        style="font-size:12px !important;">Business </label>
+                                </div>
+                                <div class="custom-control custom-checkbox ">
+                                    <input type="checkbox" name='check' class="custom-control-input"
+                                        id="defaultChecked3" checked>
+                                    <label class="custom-control-label" for="defaultChecked3"
+                                        style="font-size:12px !important;">Miscellaneous </label>
+                                </div>
+                            </div>
+                            <br>
+                            <h5 style="font-size:15px !important;"><b>Generate a new QR</b></h5>
+                            <p style="font-size:12px !important">Have you accidentaly shard your profile with somebody
+                                you
+                                wish you hadn't? Generating a new QR<br> code will also generate a new profile URL and
+                                delete your old one.</p>
+                            <div>
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="button"
+                                    style="width:110px !important;border-radius:25px !important;background-color:#C435FF !important;color:white !important;border-color:#FF0094 !important">New
+                                    QR<i class="fas fa-redo  ml-2"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row col-md-12">
+                    <div class="col-md2 offset-md-3 ml-6"
+                        style="padding-top:5% !important;padding-bottom:5% !important">
+                        <h2>Communication</h2>
+                    </div>
+                    <div class="col-md-4 text-md-left ml-3"
+                        style="padding-top:5% !important;padding-bottom:5% !important;color:#1E0058 !important;font-weight: bolder !important;">
+                        <form>
+                            <h5 style="font-size:15px !important;"><b>Email preferences</b></h5>
+                            <p style="font-size:12px !important">From time to time we'll send you emails to keep you
+                                updated. You can unsubscribe by unchecking<br> any of these below, but we may still
+                                contact you if we believe your account has been compromised<br> or there are important
+                                changes to our service.</p>
+                            <div class="row">
+                                <div class="custom-control custom-checkbox ml-3 mr-1">
+                                    <input type="checkbox" name='communication' class="custom-control-input"
+                                        id="communication1" checked>
+                                    <label class="custom-control-label" for="communication1"
+                                        style="font-size:12px !important;">Newsletter</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mr-1">
+                                    <input type="checkbox" name='communication' class="custom-control-input"
+                                        id="communication2" checked>
+                                    <label class="custom-control-label" for="communication2"
+                                        style="font-size:12px !important;">New features </label>
+                                </div>
+                                <div class="custom-control custom-checkbox ">
+                                    <input type="checkbox" name='communication' class="custom-control-input"
+                                        id="communication3" checked>
+                                    <label class="custom-control-label" for="communication3"
+                                        style="font-size:12px !important;">Changes to your preferences </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row col-md-12">
+                    <div class="col-md2 offset-md-3 mr-3"
+                        style="padding-top:5% !important;padding-bottom:5% !important">
+                        <h2>Account</h2>
+                    </div>
+                    <div class="col-md-4 text-md-left ml-3"
+                        style="padding-top:5% !important;padding-bottom:5% !important;color:#1E0058 !important;font-weight: bolder !important;">
+                        <form id="account_change" class="rowjustify-content-center"
+                            style="padding:10px;background-color:#EEEEEE !important;color:#1E0058 !important;border-radius:25px !important;margin-bottom:40px !important">
+                            <h5 style="font-size:15px !important;"><b>Your details</b></h5>
+                            <fieldset id="step1">
+                                <div class="form-group">
+                                    <label for="firstname" class="bmd-label-floating">First Name</label>
+                                    <input type="text" class="form-control" id="firstname">
+                                    <!--<span class="help error-msg" id="firstname_error_message">Should contain only
+                                        Characters</span>-->
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname" class="bmd-label-floating">Last Name</label>
+                                    <input type="text" class="form-control" id="lastname">
+                                    <!--<span class="error-msg" id="lastname_error_message">Should contain only
+                                        Characters</span>-->
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" class="bmd-label-floating">Primary email
+                                        address</label>
+                                    <input type="email" class="form-control" id="email">
+                                     <!--<span class="error-msg" id="email_error_message">Invalid email</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="bmd-label-floating">Current password</label>
+                                    <input type="password" class="form-control" id="password">
+                                     <!--<span class="error-msg" id="password_error_message">Should be 8 Characters</span>-->
+                                    <!-- <span class="bmd-help" id="password_error_message">Should be 8 Characters</span> -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="bmd-label-floating">New Password</label>
+                                    <input type="password" class="form-control" id="password">
+                                    <!--<span class="error-msg" id="password_error_message">Should be 8 Characters</span>-->
+                                    <!-- <span class="bmd-help" id="password_error_message">Should be 8 Characters</span> -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmpassword" class="bmd-label-floating">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmpassword">
+                                     <!--<span class="error-msg" id="confirmpassword_error_message">Password must be
+                                        matched</span>-->
+                                </div>
+                                <h5 style="font-size:15px !important;">Delete Your Account</h5>
+                                <p style="font-size:12px !important">Deletinig your account is permanent and cannot be
+                                    undone</p>
+                                <div>
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="button"
+                                        style="width:110px !important;border-radius:25px !important;background-color:#C435FF !important;color:white !important;border-color:#FF0094 !important">View
+                                    </button>
+                                </div>
+                                <div class="form-group col-md-12 mt-3">
+                                    <button type="button" class="btn btn-primary btn-raised profile_form_submit"
+                                        style="width:inherit !important ;border-radius: 15px !important;background-color: #FF0094 !important;text-align: center !important;">Save
+                                        Changes</i> </i></button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="contact_section" class="container-fluid ">
+            <div class="row rounded-corner-violet">
+                <div class="col-md-12 text-center" style="padding-top:5% !important;padding-bottom:5% !important">
+                    <h2>Contact us</h2>
+                    <p>Have a question about QR code For Me ?</p>
+                    <p>Drop us a line below we'll be in touch as soon as possible</p>
+                    <br><span style="font-size:12px !important;"><i class="fas fa-envelope"></i>
+                        hello@qrcodeforme.com
+                    </span>
+                </div>
+            </div>
+            <div class="row rounded-corner-white">
+                <div class="col-md-4 offset-md-4" style="padding-top:5% !important;padding-bottom:5% !important">
+                    <form id="contactus_form" class="rowjustify-content-center"
+                        style="border: #1E0058 !important;padding:10px;background-color:#EEEEEE !important;color:#1E0058 !important;border-radius:25px !important;margin-bottom:40px !important">
+                        <fieldset id="step1">
+                            <div class="form-group">
+                                <label for="Your Name" class="bmd-label-floating">Your Name</label>
+                                <input type="text" class="form-control" id="contact_form_yourname"
+                                    style="background-color:#EEEEEE !important;border-radius:15px !important">
+                            </div>
+                            <div class="form-group">
+                                <label for="Email Address" class="bmd-label-floating">Email address</label>
+                                <input type="email" class="form-control" id="contact_form_email">
+                            </div>
+                            <div class="form-group">
+                                <label for="Message" class="bmd-label-floating">Message</label>
+                                <textarea class="form-control" id="contact_form_message" rows="3"></textarea>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <button type="button" class="btn btn-primary btn-raised profile_form_submit"
+                                    style="width:inherit !important ;border-radius: 15px !important;background-color: #FF0094 !important;text-align: center !important;">Send
+                                    Message</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row rounded-corner-white">
+                <div class="col-md-12 text-center"
+                    style="padding-top:5% !important;padding-bottom:5% !important;color:#1E0058 !important;font-weight: bolder !important;">
+                    <div class="form-group">
+                        <img class="rounded-circle z-depth-2" alt="100x100" src="img/thanks.PNG"
+                            data-holder-rendered="true" />
+                    </div>
+                    <h2>Thanks!</h2>
+                    <p>We'll be in touch.</p>
+                    <div class="text-center justify-content-center">
+                        <a href=#>
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="button"
+                                style="width:100px !important;border-radius:25px !important;background-color:#FF0094 !important;color:white !important;border-color:#FF0094 !important">Home</button>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="section42" class="container-fluid rounded-corner-pink"
+            style="border-top-right-radius:25px !important;border-top-left-radius: 25px !important;">
+            <div class="row">
+                <div class="col-md-12 text-center" style="padding-top:5% !important;padding-bottom:5% !important">
+                    <h2>Others</h2>
+                    <p>Have a different question about our platform? Send us a<br>question instead and we'll get back to
+                        you.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--main layout-->
+
+
+    <div class="back-to-top" style="bottom: 45px; right: 24px;">
+        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Back to top"
+            data-toggle="tooltip" data-placement="left"><i class="fas fa-angle-up"></i></a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small indigo pt-4 mt-0">
+
+        <!-- Footer Links -->
+        <!-- <div class="container text-center text-md-left"> -->
+
+        <!-- Grid row -->
+        <!-- <div class="row"> -->
+
+        <!-- Grid column -->
+        <!-- <div class="col-md-6 mt-md-0 mt-3"> -->
+
+        <!-- Content -->
+        <!-- <h5 class="text-uppercase">Footer Content</h5>
+                    <p>Here you can use rows and columns here to organize your footer content.</p> -->
+
+        <!-- </div>  -->
+        <!-- Grid column -->
+
+        <!-- <hr class="clearfix w-100 d-md-none pb-3"> -->
+
+        <!-- Grid column -->
+        <!-- <div class="col-md-3 mb-md-0 mb-3"> -->
+
+        <!-- Links -->
+        <!-- <h5 class="text-uppercase">Links</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul> -->
+
+        <!-- </div> -->
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <!-- <div class="col-md-3 mb-md-0 mb-3"> -->
+
+        <!-- Links -->
+        <!-- <h5 class="text-uppercase">Links</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#!">Link 1</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 2</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 3</a>
+                        </li>
+                        <li>
+                            <a href="#!">Link 4</a>
+                        </li>
+                    </ul>
+
+                </div> -->
+        <!-- Grid column -->
+
+        <!-- </div> -->
+        <!-- Grid row -->
+        <!-- </div> -->
+
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3"
+            style="color:#EEEEEE !important;background-color:black !important;margin-bottom: 0px !important;margin-top: -7px !important;">
+            © 2020 Copyright:
+            <a href="https://qrcodeforme.com" style="color:#EEEEEE !important"> qrcodeforme.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!--end footer section-->
+
+
+    <!-- End your project here-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#image_upload_section").hide();
+            $('#legal_section').hide();
+            $('#step2').hide();
+            $('#step3').hide();
+            $('#step2-det').hide();
+            $('#step3-det').hide();
+            $('body').bootstrapMaterialDesign();
+            //image upload function start
+            $(document).on('change', '.btn-file :file', function () {
+                var input = $(this),
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [label]);
+            });
+
+            $('.btn-file :file').on('fileselect', function (event, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+
+            });
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#img-upload').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#imgInp").change(function () {
+                readURL(this);
+            });
+            //image upload function ends
+
+            //back button click function for section hiding
+            $('span').on('click', function () {
+                if (this.id === 'image-back') {
+                    // $("#image_upload_section").hide();
+                    // $('#legal_section').hide();
+                    // $("#signup_section").show();
+                    $('#step1').show();
+                    $('#step2').hide();
+                    $('#step3').hide();
+                    $('#step1-det').show();
+                    $('#step2-det').hide();
+                    $('#step3-det').hide();
+                } else if (this.id === 'legal-back') {
+                    // $("#image_upload_section").show();
+                    // $("#signup_section").hide();
+                    // $('#legal_section').hide();
+                    $('#step1').hide();
+                    $('#step2').show();
+                    $('#step3').hide();
+                    $('#step1-det').hide();
+                    $('#step2-det').show();
+                    $('#step3-det').hide();
+                }
+            });
+
+
+            $("#firstname_error_message").hide();
+            $("#lastname_error_message").hide();
+            $("#email_error_message").hide();
+            $("#password_error_message").hide();
+            $("#confirmpassword_error_message").hide();
+            var error_fname = false;
+            var error_lname = false;
+            var error_email = false;
+            var error_password = false;
+            var error_retype_password = false;
+
+            $("#firstname").focusout(function () {
+                check_fname();
+            });
+            $("#lastname").focusout(function () {
+                check_lname();
+            });
+            $("#email").focusout(function () {
+                check_email();
+            });
+            $("#password").focusout(function () {
+                check_password();
+            });
+            $("#confirmpassword").focusout(function () {
+                check_retype_password();
+            });
+
+            function check_fname() {
+                var pattern = /^[a-zA-Z]*$/;
+                var fname = $("#firstname").val();
+                if (pattern.test(fname) && fname !== '') {
+                    $("#firstname_error_message").hide();
+                    // $("#firstname").css("border-bottom", "0.1px solid #1E0058");
+                } else {
+                    //$("#firstname_error_message").html("Should contain only Characters"); 
+                    $("#firstname_error_message").show();
+                    //$("#firstname").css("border-bottom", "0.25px solid red");                    
+                    error_fname = true;
+                }
+            }
+
+            function check_lname() {
+                var pattern = /^[a-zA-Z]*$/;
+                var lname = $("#lastname").val()
+                if (pattern.test(lname) && lname !== '') {
+                    $("#lastname_error_message").hide();
+                    // $("#lastname").css("border-bottom", "0.25px solid #1E0058");
+                } else {
+                    //$("#lastname_error_message").html("Should contain only Characters");
+                    $("#lastname_error_message").show();
+                    //$("#lastname").css("border-bottom", "0.25px solid red");
+                    error_lname = true;
+                }
+            }
+
+            function check_password() {
+                var password_length = $("#password").val().length;
+                if (password_length < 8) {
+                    //$("#password_error_message").html("Atleast 8 Characters");
+                    $("#password_error_message").show();
+                    //$("#form_password").css("border-bottom", "0.5px solid #F90A0A");
+                    error_password = true;
+                } else {
+                    $("#password_error_message").hide();
+                    //$("#form_password").css("border-bottom", "0.5px solid #34F458");
+                }
+            }
+
+            function check_retype_password() {
+                var password = $("#password").val();
+                var retype_password = $("#confirmpassword").val();
+                if (password !== retype_password) {
+                    //$("#confirmpassword_error_message").html("Passwords Did not Matched");
+                    $("#confirmpassword_error_message").show();
+                    //$("#form_retype_password").css("border-bottom", "0.5px solid #F90A0A");
+                    error_retype_password = true;
+                } else {
+                    $("#retype_password_error_message").hide();
+                    //$("#form_retype_password").css("border-bottom", "0.5px solid #34F458");
+                }
+            }
+
+            function check_email() {
+                var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                var email = $("#email").val();
+                if (pattern.test(email) && email !== '') {
+                    $("#email_error_message").hide();
+                    // $("#email").css("border-bottom", "0.5px solid #34F458");
+                } else {
+                    // $("#email_error_message").html("Invalid Email");
+                    $("#email_error_message").show();
+                    //$("#form_email").css("border-bottom", "0.5px solid #F90A0A");
+                    error_email = true;
+                }
+            }
+
+            /*$("#profile_registration").submit(function () {
+                error_fname = false;
+                error_sname = false;
+                error_email = false;
+                error_password = false;
+                error_retype_password = false;
+
+                check_fname();
+                check_lname();
+                check_email();
+                check_password();
+                check_retype_password();
+
+                if (error_fname === false && error_sname === false && error_email === false && error_password === false && error_retype_password === false) {
+                    alert("Profile Registration  Successfull");
+                    $("#image_upload_section").show();
+                    $('#legal_section').hide();
+                    $("#signup_section").hide();
+                    return true;
+                } else {
+                    alert("Please Fill the form Correctly");
+                    return false;
+                }
+            });*/
+
+            //function on profile_form_button click
+            $('.profile_form_submit').click(function () {
+                alert('form submitted');
+                error_fname = false;
+                error_sname = false;
+                error_email = false;
+                error_password = false;
+                error_retype_password = false;
+                check_fname();
+                check_lname();
+                check_email();
+                check_password();
+                check_retype_password();
+
+                if (error_fname === false && error_sname === false && error_email === false && error_password === false && error_retype_password === false) {
+                    alert("Profile Registration  Successfull");
+                    // $("#image_upload_section").show();
+                    // $('#legal_section').hide();
+                    // $("#signup_section").hide();
+                    $('head').append('<style>.step-pog-bar li:nth-child(1):before{background-color: #FF0094}</style>');
+                    $('#step1').hide();
+                    $('#step2').show();
+                    $('#step3').hide();
+                    $('#step1-det').hide();
+                    $('#step2-det').show();
+                    $('#step3-det').hide();
+                    return true;
+                } else {
+                    alert("Please Fill the form Correctly");
+                    return false;
+                }
+            });
+
+            $('.img_upload_submit').click(function () {
+                // $("#image_upload_section").hide();
+                // $('#legal_section').show();
+                // $("#signup_section").hide();
+                $('#step1').hide();
+                $('#step2').hide();
+                $('#step3').show();
+                $('#step1-det').hide();
+                $('#step2-det').hide();
+                $('#step3-det').show();
+                $('head').append('<style>.step-pog-bar li:nth-child(2):before{background-color: #FF0094}</style>');
+            });
+
+            $('.legal_form_submit').click(function () {
+                // $("#image_upload_section").hide();
+                // $('#legal_section').show();
+                // $("#signup_section").hide();                
+                alert("successfully form submitted");
+                $('#step1-det').show();
+                $('#step2-det').hide();
+                $('#step3-det').hide();
+                $('#step3').hide();
+                $('#step2').hide();
+                $('#step1').show();
+                $('head').append('<style>.step-pog-bar li:nth-child(3):before{background-color: #FF0094}</style>');
+                /* .step-pog-bar li:first-child:after {
+                    content: none;
+                 }
+                $( "ul li:nth-child(2)" ).append( "<span> - 2nd!</span>" ); */
+            });
+
+            //function to scroll window to top starts
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#back-to-top').fadeIn();
+                } else {
+                    $('#back-to-top').fadeOut();
+                }
+            });
+            // scroll body to 0px on click
+            $('#back-to-top').click(function () {
+                $('#back-to-top').tooltip('hide');
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+
+            $('#back-to-top').tooltip('show');
+            //function to scroll window to top ends
+        });        
+    </script>
+
+</body>
+
+</html>
